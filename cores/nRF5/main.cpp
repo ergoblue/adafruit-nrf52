@@ -104,6 +104,11 @@ void suspendLoop(void)
   vTaskSuspend(_loopHandle);
 }
 
+void resumeLoop(void)
+{
+  vTaskResume(_loopHandle);
+}
+
 extern "C"
 {
 

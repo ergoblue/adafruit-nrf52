@@ -156,6 +156,7 @@ class AdafruitBluefruit
     bool     connected         (void);
     bool     disconnect        (void);
 
+    bool     setSlaveLatency   (uint16_t count);
     bool     setConnInterval   (uint16_t min, uint16_t max);
     bool     setConnIntervalMS (uint16_t min_ms, uint16_t max_ms);
     bool     setConnSupervisionTimeout(uint16_t timeout);
@@ -217,7 +218,9 @@ class AdafruitBluefruit
     TimerHandle_t _led_blink_th;
     bool _led_conn;
 
-    BLEDfu _dfu_svc;
+    // TODO TODO TODO the header is still around, otherwise the compiler
+    // complains. maybe just leave the header to save time.
+    // BLEDfu _dfu_svc;
 
     uint16_t _conn_hdl;
 

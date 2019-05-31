@@ -1,3 +1,9 @@
+# Purpose of This Fork
+
+This fork is necessary when compiling the firmware for the [ErgoBlue
+keyboard](https://www.xudongz.com/blog/2019/ergoblue/). See the [firmware
+page](https://www.xudongz.com/blog/2019/ergoblue/firmware/) for more details.
+
 # Arduino Core for Adafruit Bluefruit nRF52 Boards
 
 This repository contains the Arduino BSP for Adafruit nRF52 series:

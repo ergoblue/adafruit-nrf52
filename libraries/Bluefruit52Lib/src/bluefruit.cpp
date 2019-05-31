@@ -434,9 +434,6 @@ err_t AdafruitBluefruit::begin(uint8_t prph_count, uint8_t central_count)
   sd_power_usbremoved_enable(true);
 #endif
 
-  /*------------- DFU OTA as built-in service -------------*/
-  _dfu_svc.begin();
-
   if (_central_count)  Central.begin(); // Init Central
 
   // Create RTOS Semaphore & Task for BLE Event
@@ -556,6 +553,15 @@ bool AdafruitBluefruit::disconnect(void)
   }
 
   return true; // not connected still return true
+}
+
+bool AdafruitBluefruit::setSlaveLatency(uint16_t count)
+{
+  _ppcp.slave_latency = count;
+
+  VERIFY_STATUS( sd_ble_gap_ppcp_set(&_ppcp), false);
+
+  return true;
 }
 
 bool AdafruitBluefruit::setConnInterval(uint16_t min, uint16_t max)
